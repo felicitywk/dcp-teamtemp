@@ -2,6 +2,9 @@ from django.contrib import admin
 from django.contrib.auth.hashers import make_password
 from django.urls import reverse
 
+from import_export import resources
+from import_export.admin import ExportActionModelAdmin, ExportActionMixin
+
 from csvexport.actions import csvexport
 
 from teamtemp.responses.models import *
@@ -26,6 +29,12 @@ def _responder_id(obj):
 
 
 _responder_id.short_description = 'Responder ID'
+
+
+class TemperatureResponseResource(resources.ModelResource):
+
+    class Meta:
+        model = TemperatureResponse
 
 
 class WordCloudImageAdmin(admin.ModelAdmin):
@@ -81,7 +90,7 @@ class TeamTemperatureAdmin(admin.ModelAdmin):
         return reverse('bvc', kwargs={'survey_id': obj.id})
 
 
-class TemperatureResponseAdmin(admin.ModelAdmin):
+class TemperatureResponseAdmin(ExportActionModelAdmin):
     list_display = (
         "id",
         _request_id,
@@ -95,6 +104,7 @@ class TemperatureResponseAdmin(admin.ModelAdmin):
     raw_id_fields = ("responder", "request")
     search_fields = ("team_name", "request__id", "word")
     actions = [csvexport]
+    resource_class = TemperatureResponseResource
 
     def view_on_site(self, obj):
         return reverse(

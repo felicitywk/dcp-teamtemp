@@ -117,6 +117,8 @@ INSTALLED_APPS = (
     'rest_framework',
     'crispy_forms',
     'cspreports',
+    'csvexport',
+    'import_export',
 )
 
 PASSWORD_HASHERS = (
