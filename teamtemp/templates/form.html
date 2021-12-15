@@ -14,8 +14,8 @@
         <a href="{% url 'bvc' survey_id=id team_name=team_name %}" class="btn btn-primary">BVC</a>
         <!-- <![endif]-->
 
-        <h1>{{ pretty_team_name }} {{ survey_type_title }}</h1>
-        <h2 style="color:#0095db;">Tell us how you're feeling!</h2>
+        <h1 style="color:#0095db;">{{ pretty_team_name }} {{ survey_type_title }}</h1>
+        <h2 >How are you feeling?</h2>
         <form method="post">
           {% csrf_token %}
 
