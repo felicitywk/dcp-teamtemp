@@ -25,11 +25,11 @@
         <div>
           <div class="btn-group" role="group" aria-label="nav">
             {% if team_name != '' %}
-              <a href="{% url 'admin' survey_id=id %}" class="btn btn-info" role="button">ADMIN</a>
-              <a href="{% url 'bvc' survey_id=id team_name=team_name %}" class="btn btn-primary" role="button">BVC</a>
+              <a href="{% url 'admin' survey_id=id %}" class="btn btn-info" style="background-color:#0095DB;" role="button">ADMIN</a>
+              <a href="{% url 'bvc' survey_id=id team_name=team_name %}" class="btn btn-primary" style="background-color:#003c72;" role="button">BVC</a>
             {% else %}
-              <a href="{% url 'admin' survey_id=id %}" class="btn btn-info" role="button">ADMIN</a>
-              <a href="{% url 'bvc' survey_id=id %}" class="btn btn-primary" role="button">BVC</a>
+              <a href="{% url 'admin' survey_id=id %}" class="btn btn-info" style="background-color:#0095db;" role="button">ADMIN</a>
+              <a href="{% url 'bvc' survey_id=id %}" class="btn btn-primary" style="background-color:#003c72;" role="button">BVC</a>
             {% endif %}
           </div>
           {% if team_name != '' %}
