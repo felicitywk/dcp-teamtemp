@@ -108,21 +108,21 @@
       <div class="col no-print">
         <BR>
         <div class="btn-group" role="group" aria-label="nav">
-          <a href="{% url 'admin' survey_id=survey.id %}" class="btn btn-info"
+          <a href="{% url 'admin' survey_id=survey.id %}" class="btn btn-info" style:"background-color:#0095DB;"
              role="button">ADMIN</a>
           {% if bvc_data.team_name != '' or bvc_data.dept_names != '' or bvc_data.region_names != '' or bvc_data.site_names != '' %}
             {% if bvc_data.archive_id == '' %}
-              <a href="{% url 'bvc' survey_id=survey.id %}" class="btn btn-primary" role="button">All
+              <a href="{% url 'bvc' survey_id=survey.id %}" class="btn btn-primary" style="background-color:#003c72;" role="button">All
                 Teams</a>
             {% else %}
-              <a href="{% url 'bvc' survey_id=survey.id archive_id=bvc_data.archive_id %}" class="btn btn-primary" role="button">All
+              <a href="{% url 'bvc' survey_id=survey.id archive_id=bvc_data.archive_id %}" class="btn btn-primary" style="background-color:#003c72;" role="button">All
                 Teams</a>
             {% endif %}
           {% endif %}
           {% if bvc_data.team_name == '' and bvc_data.archive_id == '' %}
             {% for team in bvc_data.survey_teams_filtered %}
               <a href="{% url 'bvc' survey_id=team.request.id team_name=team.team_name %}"
-                 class="btn btn-primary" role="button">{{ team.pretty_team_name }}</a>
+                 class="btn btn-primary" style="background-color:#003c72;" role="button">{{ team.pretty_team_name }}</a>
             {% endfor %}
           {% endif %}
           {% if bvc_data.team_name == '' and bvc_data.archive_id != '' %}
