@@ -245,15 +245,15 @@
       {% endif %}
     </div>
     <div class="row">
-      <h1 style="color:#0095DB";align="center">{{ bvc_data.pretty_team_name }} {{ bvc_data.survey_type_title }}</h1>
+      <h1 style="color:#ffffff"; background-color:"#122845:; align="center">{{ bvc_data.pretty_team_name }} {{ bvc_data.survey_type_title }}</h1>
     </div>
 
     <div class="row">
       <div class="col-md-6">
         {% if bvc_data.archived %}
-          <h2 align="center">{{ bvc_data.archive_date|date:"M. d, Y" }}</h2>
+          <h2 align="center">{{ bvc_data.archive_date|date:"d M. Y" }}</h2>
         {% else %}
-          <h2 align="center">{% now () %}</h2>
+          <h2 style="color:#0095db"; align="center">{% now () %}</h2>
 
           <div class="no-print">
             {% if num_iterations != '0' %}
