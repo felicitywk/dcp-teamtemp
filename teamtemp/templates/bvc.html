@@ -108,7 +108,7 @@
       <div class="col no-print">
         <BR>
         <div class="btn-group" role="group" aria-label="nav">
-          <a href="{% url 'admin' survey_id=survey.id %}" class="btn btn-info" style:"background-color:#0095DB;"
+          <a href="{% url 'admin' survey_id=survey.id %}" class="btn btn-info" style="background-color:#0095DB;"
              role="button">ADMIN</a>
           {% if bvc_data.team_name != '' or bvc_data.dept_names != '' or bvc_data.region_names != '' or bvc_data.site_names != '' %}
             {% if bvc_data.archive_id == '' %}
@@ -149,7 +149,7 @@
                 <td valign="top">
                   {% if form.filter_dept_names.value %}
                     {{ form.filter_dept_names.errors }}
-                    <div class="btn btn-default text-left">
+                    <div class="btn btn-default text-left" style="background-color:#003c72;">
                       <b>DEPT</b>
                       {{ form.filter_dept_names }}
                     </div>
@@ -167,7 +167,7 @@
                 <td valign="top">
                   {% if form.filter_site_names.value %}
                     {{ form.filter_site_names.errors }}
-                    <div class="btn btn-default text-left">
+                    <div class="btn btn-default text-left" style="background-color:#003c72;">
                       <b>SITE</b>
                       {{ form.filter_site_names }}
                     </div>
@@ -177,7 +177,7 @@
                 <td valign="top">
                   {% if form.filter_site_names.value or form.filter_region_names.value or form.filter_dept_names.value %}
                     {% buttons %}
-                      <button type="submit" class="btn btn-default">
+                      <button type="submit" class="btn btn-default" style="background-color:$003c72;">
                         {% bootstrap_icon "glyphicon glyphicon-filter" %} <b>FILTER BVC</b>
                       </button>
                     {% endbuttons %}
@@ -221,17 +221,17 @@
                   <option
                     value="{% url 'bvc' survey_id=survey.id archive_id=date.id dept_names=bvc_data.dept_names region_names=bvc_data.region_names site_names=bvc_data.site_names %}"
                     {% if date.id|slugify == bvc_data.archive_id  %}selected{% endif %}>
-                    {{ date.archive_date|date:"M. d, Y" }}</option>
+                    {{ date.archive_date|date:"d M. Y" }}</option>
                 {% else %}
                   <option value="{% url 'bvc' survey_id=survey.id archive_id=date.id %}"
                     {% if date.id|slugify == bvc_data.archive_id  %}selected{% endif %}>
-                    {{ date.archive_date|date:"M. d, Y" }}</option>
+                    {{ date.archive_date|date:"d M. Y" }}</option>
                 {% endif %}
               {% else %}
                 <option
                   value="{% url 'bvc' survey_id=survey.id team_name=bvc_data.team_name archive_id=date.id %}"
                   {% if date.id|slugify == bvc_data.archive_id  %}selected{% endif %}>
-                  {{ date.archive_date|date:"M. d, Y" }}</option>
+                  {{ date.archive_date|date:"d M. Y" }}</option>
               {% endif %}
             {% endfor %}
           </select>
