@@ -37,7 +37,7 @@
             <div class="info box">Let your team know about this survey - send them
               <a href="{% url 'submit' survey_id=id team_name=team_name %}">this link</a>.
             </div>
-            <h1 >{{ pretty_team_name }} Survey Results</h1>
+            <h1 style="color:#0095db;">{{ pretty_team_name }} Team Temperature</h1>
             </div>
           {% else %}
             <BR>
@@ -71,8 +71,8 @@
         <table>
           <tr>
             <td>
-              <h1 style="color:#0095db;">Survey Results</h1>  
-              <h2>Summary</h2>
+              <h1 style="color:#003c72;">Survey Results</h1>  
+              <h2 style="color:#0095db;">Summary</h2>
               <table class="table table-striped table-condensed">
                 <tbody>
                   <tr>
