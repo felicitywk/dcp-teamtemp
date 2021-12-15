@@ -112,11 +112,11 @@
              role="button">ADMIN</a>
           {% if bvc_data.team_name != '' or bvc_data.dept_names != '' or bvc_data.region_names != '' or bvc_data.site_names != '' %}
             {% if bvc_data.archive_id == '' %}
-              <a href="{% url 'bvc' survey_id=survey.id %}" class="btn btn-primary" role="button">ALL
-                TEAMS</a>
+              <a href="{% url 'bvc' survey_id=survey.id %}" class="btn btn-primary" role="button">All
+                Teams</a>
             {% else %}
-              <a href="{% url 'bvc' survey_id=survey.id archive_id=bvc_data.archive_id %}" class="btn btn-primary" role="button">ALL
-                TEAMS</a>
+              <a href="{% url 'bvc' survey_id=survey.id archive_id=bvc_data.archive_id %}" class="btn btn-primary" role="button">All
+                Teams</a>
             {% endif %}
           {% endif %}
           {% if bvc_data.team_name == '' and bvc_data.archive_id == '' %}
@@ -245,7 +245,7 @@
       {% endif %}
     </div>
     <div class="row">
-      <h1 align="center">{{ bvc_data.pretty_team_name }} {{ bvc_data.survey_type_title }}</h1>
+      <h1 style="color:#0095DB";align="center">{{ bvc_data.pretty_team_name }} {{ bvc_data.survey_type_title }}</h1>
     </div>
 
     <div class="row">
